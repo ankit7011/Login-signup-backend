@@ -1,6 +1,8 @@
 import express from "express"
 import cors from "cors"
 import mongoose from "mongoose"
+require("dotenv").config();
+
 
 const app = express()
 app.use(express.json())
@@ -79,6 +81,6 @@ app.post("/register", (req, res) => {
 });
 
 
-app.listen(9002, () => {
-    console.log("BE started at port 9002")
+app.listen(process.env.PORT || 3001, () => {
+    console.log("Back End started")
 })
