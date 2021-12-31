@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "login-signup-backend",
   "version": "1.0.0",
   "description": "",
@@ -8,8 +9,7 @@
     "express": "^4.17.2",
     "mongoose": "^6.1.4",
     "node-sass": "^7.0.1",
-    "nodemon": "^2.0.15",
-    "type": "module"
+    "nodemon": "^2.0.15"
   },
   "devDependencies": {},
   "scripts": {
