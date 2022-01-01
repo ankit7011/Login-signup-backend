@@ -9,7 +9,7 @@ app.use(express.urlencoded())
 app.use(cors())
 
 
-mongoose.connect('mongodb://localhost:27017/myaLoginRegisterDB', {
+mongoose.connect("mongodb+srv://ankit:Onetheway123@cluster0.t5vm4.mongodb.net/myaLoginRegisterDB?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology:true
 },()=> {
