@@ -8,6 +8,7 @@ app.use(express.json())
 app.use(express.urlencoded())
 app.use(cors())
 
+
 mongoose.connect('mongodb://localhost:27017/myaLoginRegisterDB', {
     useNewUrlParser: true,
     useUnifiedTopology:true
