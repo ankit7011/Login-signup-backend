@@ -8,8 +8,8 @@ app.use(express.json())
 app.use(express.urlencoded())
 app.use(cors())
 
-
-mongoose.connect("mongodb+srv://ankit:Onetheway123@cluster0.t5vm4.mongodb.net/myaLoginRegisterDB?retryWrites=true&w=majority", {
+// "mongodb+srv://ankit:Onetheway123@cluster0.t5vm4.mongodb.net/myaLoginRegisterDB?retryWrites=true&w=majority"
+mongoose.connect('mongodb://localhost:27017/myaLoginRegisterDB', {
     useNewUrlParser: true,
     useUnifiedTopology:true
 },()=> {
@@ -89,7 +89,9 @@ app.post("/con", (req, res) => {
     const { name,email,password } = req.body
     Parcel.find({ user: email }, (error, data) => {
         if (error) {
+            res.send(error)
             console.log(error)
+            // alert("NO CONTACT")
         } else {
             console.log("Finded Succesfully")
             // console.log(data, email)
@@ -98,6 +100,22 @@ app.post("/con", (req, res) => {
         }
     })
 })
+
+
+app.post("/read", (req, res) => {
+    console.log("HELLOO")
+  User.find({}, (error, data) => {
+      if (error) {
+          console.log(error);
+      res.send(error);
+    } else {
+        console.log(data);
+      res.send(data);
+    }
+  });
+});
+
+
 
 app.post("/del", (req, res) => {
     console.log("del Call Recived")
@@ -191,6 +209,6 @@ app.post("/register", (req, res) => {
 });
 
 
-app.listen(process.env.PORT || 3001, () => {
+app.listen(3001, () => {
     console.log("Back End started")
 })
